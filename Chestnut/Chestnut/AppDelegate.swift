@@ -15,7 +15,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.backgroundColor = UIColor.white
+        
+        let myTabBar = UITabBarController()
+        myTabBar.tabBar.backgroundColor = UIColor.clear
+        
+        let mainVC = ViewController()
+        mainVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "mainVC"), tag: 100)
+        mainVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "mainVC2")
+        
+        let mainNavVC = UINavigationController(rootViewController: mainVC)
+        
+        
+        let createVC = ViewController()
+        createVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "createVC"), tag: 200)
+
+        let mapsVC = ViewController()
+        mapsVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "mapsVC"), tag: 200)
+
+        let profileVC = ViewController()
+        profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileVC"), tag: 200)
+
+        
+        myTabBar.viewControllers = [mainNavVC, createVC, mapsVC, profileVC]
+        myTabBar.selectedIndex = 0
+        
+        self.window!.rootViewController = myTabBar
+        
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
