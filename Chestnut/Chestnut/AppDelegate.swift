@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let myTabBar = UITabBarController()
         myTabBar.tabBar.backgroundColor = UIColor.clear
         
-        let mainVC = ViewController()
-        mainVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "mainVC"), tag: 100)
-        mainVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "mainVC2")
+        let mainTVC = MainTVC()
+        mainTVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "mainVC"), tag: 100)
+        mainTVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "mainVC2")
         
-        let mainNavVC = UINavigationController(rootViewController: mainVC)
+        let mainNavVC = UINavigationController(rootViewController: mainTVC)
         
         
         let createVC = ViewController()

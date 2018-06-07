@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E5DD61520C7CAD700A52F3B /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5DD61420C7CAD700A52F3B /* keys.plist */; };
+		0E5DD61B20C8C65400A52F3B /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5DD61A20C8C65400A52F3B /* MainTVC.swift */; };
+		0E5DD61D20C902FF00A52F3B /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5DD61C20C902FF00A52F3B /* MainCell.swift */; };
 		0EEED91220C69D1B007AE76F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEED91120C69D1B007AE76F /* AppDelegate.swift */; };
 		0EEED91420C69D1C007AE76F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEED91320C69D1B007AE76F /* ViewController.swift */; };
 		0EEED91720C69D1C007AE76F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEED91520C69D1C007AE76F /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		0E5DD61420C7CAD700A52F3B /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		0E5DD61A20C8C65400A52F3B /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
+		0E5DD61C20C902FF00A52F3B /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		0EEED90E20C69D1B007AE76F /* Chestnut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chestnut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEED91120C69D1B007AE76F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEED91320C69D1B007AE76F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5DD61E20C9041D00A52F3B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E5DD61C20C902FF00A52F3B /* MainCell.swift */,
+				0E5DD61A20C8C65400A52F3B /* MainTVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0EEED90520C69D1B007AE76F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 		0EEED91020C69D1B007AE76F /* Chestnut */ = {
 			isa = PBXGroup;
 			children = (
+				0E5DD61E20C9041D00A52F3B /* Main */,
 				0EEED91120C69D1B007AE76F /* AppDelegate.swift */,
 				0EEED91320C69D1B007AE76F /* ViewController.swift */,
 				0E5DD61420C7CAD700A52F3B /* keys.plist */,
@@ -470,6 +484,8 @@
 			files = (
 				0EEED91420C69D1C007AE76F /* ViewController.swift in Sources */,
 				0EEED91220C69D1B007AE76F /* AppDelegate.swift in Sources */,
+				0E5DD61D20C902FF00A52F3B /* MainCell.swift in Sources */,
+				0E5DD61B20C8C65400A52F3B /* MainTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
