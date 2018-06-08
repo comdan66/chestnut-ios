@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MainTVC: UITableViewController {
+class MainTVC: UITableViewController, MainCellDelegate {
+    
 //    let loading = UIAlertController (title: nil, message: "讀取中..", preferredStyle: .alert)
 
     var loading: UIAlertController! = nil;
@@ -56,6 +57,7 @@ class MainTVC: UITableViewController {
         self.view.backgroundColor = UIColor(red:0.94, green:0.96, blue:0.95, alpha:1.0)
         
         self.tableView.register (MainCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.allowsSelection = false;
         
 
 //        print(datas);
@@ -88,53 +90,56 @@ class MainTVC: UITableViewController {
     }
 
     
+    func showAddress(cell: MainCell) {
+        guard (tableView.indexPath(for: cell)?.row) != nil else { return }
+        
+//        let mapVc = UIViewController();
+//        mapVc.view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+
+  
+//        let right = UIBarButtonItem();
+//        right.title = "關閉";
+//        mapVc.navigationController?.navigationItem.rightBarButtonItem = right;
+//        mapVc.navigationItem.rightBarButtonItem = UIBarButtonItem(
+//            title:"設定" ,
+//            style:.Plain ,
+//            target:self ,
+//            action: #selector(mapVc.close))
+        
+        
+        
+        self.present (UINavigationController (rootViewController: MainMapsVC ()), animated: true, completion: nil);
+
+//        mapVc.root
+        
+//        let alert = UIAlertController(title: "title", message: "message",
+//                                      preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "确定", style: .cancel))
+//        let vc = ViewController();
+////        vc.
+//        self.present(vc, animated: true)
+//        let vc = ViewController();
+//        self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+//        self.parent?.present(vc, animated: true, completion: nil);
+        
+//        self.navigationController?.pushViewController(vc, animated: true);
+//        self.presentedViewController = vc;
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//        cell.textLabel?.text = self.datas[indexPath.row];
-        
-        
-        // Configure the cell...
 
-//        return cell
-//        return nil;
-//        self.tableView.register (UITableViewCell.self, forCellReuseIdentifier: "cell")
-
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? UITableViewCell
-//
-//        if (cell == nil) {
-//            let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-//            cell.textLabel?.text = self.datas[indexPath.row];
-////        print("~~~~~~~~~~``");
-//
-//        }
-//initWithStyle
-        
-        
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath);
-//        cell.textLabel?.text = self.datas[indexPath.row];
-        
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "Cxx") as? MainCell
-//        if cell == nil {
-//            cell = MainCell.init(style: .default, reuseIdentifier: "Cxx");
-//            cell?.initUI (str: self.datas[indexPath.row]);
-//        }
-//
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cxx") as? MainCell {
-//
-//        }
         var cell = tableView.dequeueReusableCell(withIdentifier: "Cxx") as? MainCell
         
         if cell == nil {
             cell = MainCell.init(style: .default, reuseIdentifier: "Cxx");
             cell?.initUI (str: self.datas[indexPath.row]);
+            cell?.delegate = self;
         }
         
         return cell!;
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 132;
+        return 136;
     }
     
 

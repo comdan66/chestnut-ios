@@ -10,11 +10,25 @@ import UIKit
 import GoogleMaps
 
 class ViewController: UIViewController {
-
+    
+    @objc func aaa () {
+        let vc = ViewController();
+        self.present(vc, animated: true, completion: nil);
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("===");
+
+        let button = UIButton();
+        button.translatesAutoresizingMaskIntoConstraints = false;
+        button.setTitle("點我", for: .normal);
+        button.setTitleColor(#colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1), for: .normal)
+        button.addTarget(self, action: #selector(aaa), for: .touchUpInside);
         
+        self.view.addSubview(button);
+        self.view.addConstraint(NSLayoutConstraint (item: button, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint (item: button, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0))
+        
+        self.view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
 //        self.window!.rootViewController = nav
         
 //        var keys: NSDictionary?
