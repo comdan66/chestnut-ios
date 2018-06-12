@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class OATool {
     
@@ -14,7 +15,9 @@ class OATool {
 //        let documentDirectoryURL =  try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 //        return documentDirectoryURL.appendingPathComponent("dictionary.plist")
 //    }
-
+    static func layout (_ view: UIView, _ view1: Any, _ attr1: NSLayoutAttribute, _ relation: NSLayoutRelation, _ view2: Any?, _ attr2: NSLayoutAttribute,_ multiplier: CGFloat, _ c: CGFloat) {
+        view.addConstraint(NSLayoutConstraint(item: view1, attribute: attr1, relatedBy: relation, toItem: view2, attribute: attr2, multiplier: multiplier, constant: c))
+    }
     static func getPlist(fileName: String) -> [String:String] {
         
         

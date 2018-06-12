@@ -8,6 +8,12 @@
 
 import UIKit
 
+class CustomTitleView: UIView {
+    
+    override var intrinsicContentSize: CGSize {
+        return UILayoutFittingExpandedSize
+    }
+}
 class MainTVC: UITableViewController, MainCellDelegate {
     
 //    let loading = UIAlertController (title: nil, message: "讀取中..", preferredStyle: .alert)
@@ -45,13 +51,52 @@ class MainTVC: UITableViewController, MainCellDelegate {
         self.loading.dismiss(animated: true, completion: nil);
         
     }
+    @objc func add () {
+        self.present (UINavigationController (rootViewController: PicPickerVC ()), animated: true, completion: nil);
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "栗子"
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.42, green:0.61, blue:0.47, alpha:1.0)
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "createVC"), style: .plain, target: self, action: #selector(add))
+        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
+        
+        
+        
+//            [[ alloc] initWithFrame:titleView.bounds];
+        
+//        UITextField
+//        let v = UIView ();
+//        v.backgroundColor = #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)
+//        self.navigationController?.navigationBar.insertSubview(<#T##view: UIView##UIView#>, aboveSubview: <#T##UIView#>)
+        
+//        self.navigationItem.titleView = CustomTitleView()
+//        self.navigationItem.titleView?.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+//
+//        if let titleView = self.navigationItem.titleView {
+//            print("~~~~~~~");
+////            let search = UILabel ();
+////            search.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+////            search.translatesAutoresizingMaskIntoConstraints = false;
+//
+////            titleView.addSubview(search);
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .centerX, relatedBy: .equal, toItem: titleView, attribute: .centerX, multiplier: 1, constant: 1))
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .centerY, relatedBy: .equal, toItem: titleView, attribute: .centerY, multiplier: 1, constant: 1))
+//
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .left, relatedBy: .equal, toItem: titleView, attribute: .left, multiplier: 1, constant: 0))
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .top, relatedBy: .equal, toItem: titleView, attribute: .top, multiplier: 1, constant: 0))
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .right, relatedBy: .equal, toItem: titleView, attribute: .right, multiplier: 1, constant: 0))
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .bottom, relatedBy: .equal, toItem: titleView, attribute: .bottom, multiplier: 1, constant: 0))
+//
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100))
+////            titleView.addConstraint(NSLayoutConstraint(item: search, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
+//        }
+//        self.navigationItem.titleView = search;
+//        self.navigationItem.titleView?.backgroundColor = #colorLiteral(red: 0.1921568662, green: 0.007843137719, blue: 0.09019608051, alpha: 1)
         
 //        self.tableView.separatorStyle = .none;
         self.view.backgroundColor = UIColor(red:0.94, green:0.96, blue:0.95, alpha:1.0)

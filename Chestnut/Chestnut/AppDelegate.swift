@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        IQKeyboardManager.shared.enable = true
+        
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.backgroundColor = UIColor.white
@@ -32,8 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainNavVC = UINavigationController(rootViewController: mainTVC)
         
         
-        let createVC = ViewController()
-        createVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "createVC"), tag: 200)
+//        let createVC = CreateVC()
+//        createVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "createVC"), tag: 200)
+//        let createNavVC = UINavigationController(rootViewController: createVC)
 
         let mapsVC = ViewController()
         mapsVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "mapsVC"), tag: 200)
@@ -42,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileVC"), tag: 200)
 
         
-        myTabBar.viewControllers = [mainNavVC, createVC, mapsVC, profileVC]
+        myTabBar.viewControllers = [mainNavVC, mapsVC, profileVC]
         myTabBar.selectedIndex = 0
         
         self.window!.rootViewController = myTabBar
